@@ -14,22 +14,22 @@ const Todos: React.FC = () => {
 
   const addTodo = useMutation({
     mutationFn: (d: any) => api.post("/todos", d),
-    onSuccess: () => queryClient.invalidateQueries(["todos"]),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["todos"] }),
   });
 
   const updateTodo = useMutation({
     mutationFn: ({ id, data }: any) => api.put(`/todos/${id}`, data),
-    onSuccess: () => queryClient.invalidateQueries(["todos"]),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["todos"] }),
   });
 
   const deleteTodo = useMutation({
     mutationFn: (id: string) => api.delete(`/todos/${id}`),
-    onSuccess: () => queryClient.invalidateQueries(["todos"]),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["todos"] }),
   });
 
   const toggleTodo = useMutation({
     mutationFn: (id: string) => api.post(`/todos/${id}/toggle`),
-    onSuccess: () => queryClient.invalidateQueries(["todos"]),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["todos"] }),
   });
 
   if (isLoading)
