@@ -2,7 +2,6 @@ import { Request, Response } from 'express';
 import User from '../models/User';
 import { signToken } from '../utils/jwt';
 import crypto from 'crypto';
-import { sendResetEmail } from '../utils/emailStub';
 
 export const signup = async (req: Request, res: Response) => {
   const { email, password, name } = req.body;
