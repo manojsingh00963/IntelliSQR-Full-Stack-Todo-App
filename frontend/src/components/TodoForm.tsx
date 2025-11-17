@@ -26,7 +26,7 @@ const TodoForm: React.FC<{ onSubmit: (d: any) => void }> = ({ onSubmit }) => {
             />
             <button
                 type="submit"
-                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                className="bg-green-600 text-white px-4 py-2 rounded hover:cursor-pointer hover:bg-green-700"
             >
                 Add
             </button>

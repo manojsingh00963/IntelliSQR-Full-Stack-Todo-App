@@ -18,7 +18,7 @@ return (
 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 <input {...register("email")} placeholder="Email" className="w-full border p-2 rounded" />
 <input {...register("password")} type="password" placeholder="Password" className="w-full border p-2 rounded" />
-<button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Login</button>
+<button className="w-full bg-blue-600 text-white py-2 rounded hover:cursor-pointer hover:bg-blue-700">Login</button>
 </form>
 <Link to="/forgot" className="block mt-4 text-center text-blue-600">Forgot Password?</Link>
 </div>

@@ -31,7 +31,6 @@ export const forgotPassword = async (req: Request, res: Response) => {
   user.resetPasswordExpires = new Date(Date.now() + (Number(process.env.RESET_TOKEN_EXPIRES_MIN || '30') * 60 * 1000));
   await user.save();
   const resetLink = `${process.env.FRONTEND_URL}/reset-password?token=${token}&email=${encodeURIComponent(email)}`;
-  await sendResetEmail(email, resetLink);
   res.json({ message: 'Reset link sent' });
 };
 
